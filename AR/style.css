@@ -1,1 +1,25 @@
+/* Rimuove il margine e assicura che la scena occupi tutta la pagina */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Colore di sfondo neutro */
+}
 
+/* Stile per l'intestazione */
+h1 {
+    text-align: center;
+    color: black;
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+/* Stile per la scena A-Frame */
+a-scene {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
