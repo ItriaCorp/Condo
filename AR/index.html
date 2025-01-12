@@ -6,21 +6,21 @@
   <title>Bacheca Digitale AR</title>
   <!-- Inclusione di Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
-  <!-- Script personalizzato -->
-  <script src="script.js" defer></script>
   <!-- Collegamento al file CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Script personalizzato -->
+  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Titolo principale -->
   <h1>Bacheca Digitale Interattiva</h1>
 
-  <!-- Layout della bacheca e dei pulsanti -->
+  <!-- Contenitore principale -->
   <div class="container">
     <!-- Canvas per la bacheca AR -->
     <canvas id="ar-canvas"></canvas>
 
-    <!-- Sezione pulsanti -->
+    <!-- Pulsanti per documenti -->
     <div class="buttons">
       <button onclick="openDocument('https://example.com/documento1.pdf')">Regolamento Condominiale</button>
       <button onclick="openDocument('https://example.com/documento2.pdf')">Verbale Assemblea</button>
