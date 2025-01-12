@@ -1,5 +1,5 @@
 let orbit = document.querySelector("#orbit");
-let angle = 0;
+let angle = 0; 
 
 function animateOrbit() {
     angle += 0.01;
