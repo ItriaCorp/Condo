@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ItriaSAC AR</title>
+    <!-- Carica A-Frame -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!-- Carica Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Carica AR.js -->
@@ -23,6 +25,15 @@
                         color="white" 
                         position="0 0.1 0.1" 
                         scale="2 2 2"></a-text>
+            </a-entity>
+            <!-- Cerchi orbitanti -->
+            <a-entity id="orbit" position="0 0 0">
+                <a-entity geometry="primitive: sphere; radius: 0.3" 
+                          material="color: white" 
+                          position="1 0 0"></a-entity>
+                <a-entity geometry="primitive: sphere; radius: 0.3" 
+                          material="color: white" 
+                          position="-1 0 0"></a-entity>
             </a-entity>
         </a-marker>
         <!-- Camera AR -->
