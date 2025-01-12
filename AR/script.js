@@ -1,5 +1,7 @@
-// Debug iniziale
-console.log("script.js caricato!");
+// Funzione per aprire documenti
+function openDocument(url) {
+  window.open(url, '_blank');
+}
 
 // Inizializza la scena
 const scene = new THREE.Scene();
@@ -10,7 +12,7 @@ camera.position.z = 5;
 
 // Configura il renderer
 const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#ar-canvas') });
-renderer.setSize(window.innerWidth, 400);
+renderer.setSize(window.innerWidth * 0.9, 400);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 // Aggiungi un pannello fluttuante
@@ -19,7 +21,7 @@ const material = new THREE.MeshBasicMaterial({ color: 0x007bff, side: THREE.Doub
 const panel = new THREE.Mesh(geometry, material);
 scene.add(panel);
 
-// Animazione
+// Animazione del pannello
 function animate() {
   requestAnimationFrame(animate);
   panel.rotation.y += 0.01; // Ruota il pannello
@@ -29,7 +31,7 @@ animate();
 
 // Rendi la finestra reattiva
 window.addEventListener('resize', () => {
-  const width = window.innerWidth;
+  const width = window.innerWidth * 0.9;
   const height = 400;
   renderer.setSize(width, height);
   camera.aspect = width / height;
