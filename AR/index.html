@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ItriaSAC AR</title>
-    <!-- Carica A-Frame con supporto AR -->
+    <!-- A-Frame con supporto AR.js -->
     <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="margin: 0; overflow: hidden;">
+    <h1 style="text-align: center; color: black; margin: 10px 0;">Debug ItriaSAC AR</h1>
     <a-scene embedded arjs>
-        <!-- Marker QR Code -->
+        <!-- Marker Hiro per debug -->
         <a-marker preset="hiro">
             <!-- Cerchio centrale -->
             <a-entity geometry="primitive: circle; radius: 1" 
