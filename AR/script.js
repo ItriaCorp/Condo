@@ -3,39 +3,36 @@ const scene = new THREE.Scene();
 
 // Configura la fotocamera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5; // Posizione iniziale della fotocamera
+camera.position.z = 5;
 
 // Configura il renderer
 const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('canvas') });
-renderer.setSize(window.innerWidth * 0.9, 400); // Adatta il renderer alla finestra
-renderer.setPixelRatio(window.devicePixelRatio); // Migliora la qualità su schermi ad alta densità
+renderer.setSize(window.innerWidth, window.innerHeight); // Adatta il canvas alle dimensioni dello schermo
+renderer.setPixelRatio(window.devicePixelRatio); // Migliora la qualità su schermi mobili
 
-// Aggiungi un pannello fluttuante
-const geometry = new THREE.PlaneGeometry(3, 2); // Crea un rettangolo
-const material = new THREE.MeshBasicMaterial({ color: 0xe63946, side: THREE.DoubleSide }); // Materiale rosso vivo
-const panel = new THREE.Mesh(geometry, material);
-scene.add(panel); // Aggiungi il pannello alla scena
+// Aggiungi un cubo alla scena per test
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
 
-// Aggiungi texture (immagine) al pannello
-const loader = new THREE.TextureLoader();
-loader.load('assets/texture.png', function (texture) {
-  panel.material.map = texture; // Aggiungi la texture al pannello
-  panel.material.needsUpdate = true; // Aggiorna il materiale
-});
-
-// Animazione del pannello
+// Animazione del cubo
 function animate() {
-  requestAnimationFrame(animate); // Loop dell'animazione
-  panel.rotation.y += 0.01; // Ruota il pannello lungo l'asse Y
-  renderer.render(scene, camera); // Renderizza la scena
+  requestAnimationFrame(animate);
+  cube.rotation.x += 0.01; // Rotazione sull'asse X
+  cube.rotation.y += 0.01; // Rotazione sull'asse Y
+  renderer.render(scene, camera);
 }
 animate();
 
 // Rendi la finestra reattiva
 window.addEventListener('resize', () => {
-  const width = window.innerWidth * 0.9; // Adatta la larghezza al ridimensionamento
-  const height = 400; // Mantieni l'altezza fissa
+  const width = window.innerWidth;
+  const height = window.innerHeight;
   renderer.setSize(width, height);
-  camera.aspect = width / height; // Aggiorna il rapporto d'aspetto della fotocamera
+  camera.aspect = width / height;
   camera.updateProjectionMatrix();
 });
+
+// Debug per dispositivi mobili
+console.log("WebGL supportato:", renderer.capabilities.isWebGL2);
