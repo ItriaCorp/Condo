@@ -13,15 +13,18 @@
 </head>
 <body>
   <!-- Titolo principale -->
-  <h1>Bacheca Digitale AR</h1>
+  <h1>Bacheca Digitale Interattiva</h1>
 
-  <!-- Sezione del QR Code -->
-  <div class="qr-container">
-    <img src="assets/qr-code.png" alt="QR Code" class="qr-code">
-    <p>Scansiona il QR per accedere alla bacheca interattiva!</p>
+  <!-- Layout della bacheca e dei pulsanti -->
+  <div class="container">
+    <!-- Canvas per la bacheca AR -->
+    <canvas id="ar-canvas"></canvas>
+
+    <!-- Sezione pulsanti -->
+    <div class="buttons">
+      <button onclick="openDocument('https://example.com/documento1.pdf')">Regolamento Condominiale</button>
+      <button onclick="openDocument('https://example.com/documento2.pdf')">Verbale Assemblea</button>
+    </div>
   </div>
-
-  <!-- Canvas per l'elemento AR -->
-  <canvas id="ar-canvas"></canvas>
 </body>
 </html>
