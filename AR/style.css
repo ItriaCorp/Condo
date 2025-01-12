@@ -1,53 +1,21 @@
-/* Generale */
-body {
-  font-family: 'Arial', sans-serif;
-  background: #101010; /* Nero profondo */
-  color: #f0f0f0; /* Testo chiaro */
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Titolo */
-h1 {
-  margin: 20px 0;
-  color: #e63946;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border: 2px solid #e63946;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
-
-/* Sezioni */
-.section {
-  margin: 20px 0;
-  width: 80%;
-  max-width: 800px;
-  text-align: left;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  color: #e63946;
-  border-bottom: 2px solid #e63946;
-  margin-bottom: 10px;
-}
-
-.section-content {
-  color: #f0f0f0;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* Canvas */
+/* Canvas per il rendering */
 canvas {
-  margin-top: 20px;
-  border: 4px solid #e63946; /* Bordo rosso */
-  box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
   display: block;
-  width: 90%; /* Per adattarsi meglio */
-  height: 400px; /* Altezza fissa per ora */
+  width: 100%; /* Occupa tutta la larghezza dello schermo */
+  height: 100vh; /* Occupa l'intera altezza dello schermo */
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Debug (opzionale per test) */
+.debug {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
