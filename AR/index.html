@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bacheca Digitale AR</title>
 
-  <!-- Inclusione di Three.js da un CDN alternativo -->
+  <!-- Inclusione di Three.js -->
   <script src="https://unpkg.com/three@0.152.0/build/three.min.js"></script>
 
   <!-- Collegamento al file CSS -->
@@ -15,12 +15,13 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Titolo principale -->
   <h1>Bacheca Digitale Interattiva</h1>
 
-  <!-- Contenitore principale -->
   <div class="container">
-    <!-- Canvas per la bacheca AR -->
+    <!-- Feed della fotocamera -->
+    <video id="camera-feed" autoplay playsinline muted></video>
+
+    <!-- Canvas per gli oggetti AR -->
     <canvas id="ar-canvas"></canvas>
 
     <!-- Pulsanti per documenti -->
